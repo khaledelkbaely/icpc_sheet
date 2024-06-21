@@ -26,8 +26,15 @@ int main() {
 				cols[j] = cols[j+1];
 				cols[j+1] = tmp;
 			}
+			// print answer
+			for (int i = 0; i < (int)n-1; i++) {
+				std::cout << cols[i] << " ";
+			}
+			std::cout << cols[n-1] << std::endl;
+
 		}
-	}
+		swapped = false;
+}
 
 	// print answer
 	for (int i = 0; i < (int)n-1; i++) {
