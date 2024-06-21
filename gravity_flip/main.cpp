@@ -6,6 +6,7 @@ int main() {
 	// cols => number of cubes in col
 	int *cols, tmp;
 	unsigned long n;
+	bool swapped = false;
 
 	std::cin >> n;
 	
@@ -17,9 +18,10 @@ int main() {
 
 	// gravity flip
 	// sort
-	for (int i = 0; i < (int)n; i++) {
-		for (int j = 0; j < (int)n-i; j++) {
+	for (int i = 0; i < (int)n && !swapped; i++) {
+		for (int j = 0; j < (int)n-i-1; j++) {
 			if (cols[j+1] < cols[j]) {
+				swapped = true;
 				tmp = cols[j];
 				cols[j] = cols[j+1];
 				cols[j+1] = tmp;
