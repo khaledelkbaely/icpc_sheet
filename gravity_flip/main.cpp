@@ -4,7 +4,7 @@
 int main() {
 	// n => number of cols
 	// cols => number of cubes in col
-	int *cols, *p1, *p2, tmp;
+	int *cols, tmp;
 	unsigned long n;
 
 	std::cin >> n;
@@ -14,20 +14,17 @@ int main() {
 	for (int i = 0; i < (int)n; i++) {
 		std::cin >> cols[i];
 	}
-	p1 = cols;
-	p2 = cols  + n - 1;
 
 	// gravity flip
-	while (p1 != p2) {
-		if (*p1 > *p2) {
-			tmp = *p1;
-			*p1 = *p2;
-			*p2 = tmp;
+	// sort
+	for (int i = 0; i < (int)n; i++) {
+		for (int j = 0; j < (int)n-i; j++) {
+			if (cols[j+1] < cols[j]) {
+				tmp = cols[j];
+				cols[j] = cols[j+1];
+				cols[j+1] = tmp;
+			}
 		}
-		if (*p1 > *(p2 - 1))
-			p2--;
-		else
-		 p1++;
 	}
 
 	// print answer
