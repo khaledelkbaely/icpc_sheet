@@ -26,5 +26,5 @@ int main() {
 	if (distinct % 2)
 		std::cout << "IGNORE HIM!";
 	else
-		std::cout << "CHAT WITH HER";
+		std::cout << "CHAT WITH HER!";
 }
