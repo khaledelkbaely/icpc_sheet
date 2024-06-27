@@ -4,8 +4,7 @@
 
 int main() {
 	std::string word;
-	int upper, lower;
-	upper = lower = 0;
+	int upper{}, lower{};
 
 	std::cin >> word;
 	
