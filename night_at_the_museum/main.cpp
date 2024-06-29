@@ -11,7 +11,7 @@ int main() {
 	for (auto c : name) {
 		if (abs(c - curr) > 13)
 			rotations += 26 - abs(c - curr);
-		else if (c - curr <= 13)
+		else if (abs(c - curr) <= 13)
 			rotations += abs(c - curr);
 		curr = c;
 	}
