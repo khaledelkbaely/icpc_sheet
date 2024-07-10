@@ -16,7 +16,7 @@ int main() {
 
 		if (total > waste_limit) {
 			times_to_empty_waste++;
-			total -= waste_limit;
+			total = 0;
 		}
 	}
 	std::cout << times_to_empty_waste;
