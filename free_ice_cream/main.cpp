@@ -1,8 +1,8 @@
 #include <iostream>
 
 int main() {
-	int nkids{}, npacks{}, distressed_kids{};
-
+	int nkids{}, distressed_kids{};
+	long int npacks{};
 	std::cin >> nkids >> npacks;
 
 	for (; nkids > 0; nkids--) {
