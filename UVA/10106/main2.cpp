@@ -15,6 +15,11 @@ int main(int argc, char *argv[]) {
             }
         }
 
+        for (int i = 0; i < nums_reversed.capacity(); i++) {
+            nums_reversed[i+1] += nums_reversed[i] / 10;
+            nums_reversed[i] %= 10;
+        }
+
         auto it = nums_reversed.end()-1;
         while (it != nums_reversed.begin()-1 && *it == 0) it--;
         while (it != nums_reversed.begin()-1) std::cout << *it--;
