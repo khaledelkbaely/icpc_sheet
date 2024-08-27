@@ -1,5 +1,4 @@
-#include <cmath>
-#include <ios>
+#include <iomanip>
 #include <iostream>
 
 bool no_common_divisor(int n, int m) {
@@ -19,11 +18,9 @@ bool no_common_divisor(int n, int m) {
 int main (int argc, char *argv[]) {
     int step{}, mod{};
 
-    while (std::cin >> step && std::cin >> mod) {
-        std::cout.width(10);
-        std::cout << std::right << step;
-        std::cout.width(10);
-        std::cout << std::right << mod << "     ";
+    while (std::cin >> step >> mod) {
+        std::cout << std::setw(10) << step;
+        std::cout << std::setw(10) << mod << "    ";
         if (no_common_divisor(mod, step))
             std::cout << std::left << "Good Choice\n\n";
         else
