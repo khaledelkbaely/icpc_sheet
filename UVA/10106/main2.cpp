@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,6 +10,8 @@ int main(int argc, char *argv[]) {
     while (std::cin >> n1 >> n2) {
         std::vector<int> nums_reversed(600);
 
+        std::reverse(n1.begin(), n1.end());
+        std::reverse(n2.begin(), n2.end());
         for (int i = 0; i < n1.size(); i++) {
             for (int j = 0; j < n2.size(); j++) {
                 nums_reversed[i+j] += (n1[i] - '0') * (n2[j] - '0');
