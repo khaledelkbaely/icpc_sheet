@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <iostream>
 #include <string>
 
@@ -78,12 +79,40 @@ std::string add_strings(std::string s1, std::string s2) {
     return reverse(s3);
 }
 
+/*
+* 9 * 9 = 81
+* 99 * 9 = (90 + 9) * 9 = 9 * 9 * 10 + 9 * 9
+* 999 * 9 = (900 + 90 + 9) * 9 = 9*9*100 + 9*9*10 + 9*9
+* 99 * 99 = 99 * 9 * 10 + 99 * 9
+* 999 * 99 = 999 * 9 * 10 + 999 * 9
+*/
 std::string multiply_strings(std::string s1, std::string s2) {
     if (s2.size() > s1.size())
         return multiply_strings(s2, s1);
-    std::string result = "0";
-    for (; s2 != "0"; s2 = minus_strings(s2, "1")) {
-        result = add_strings(s1, result);
+    if (s2.size() == 1) {
+        std::string result{"0"};
+
+        int scale = 0;
+        int i2 = std::stoi(s2);
+        for (auto it1 = s1.end()-1; it1 != s1.begin() - 1; it1--) {
+            int nd = *it1 - '0';
+            int res = nd * i2;
+
+            result = add_strings(std::to_string(res).append(scale, '0'), result);
+
+            scale++;
+        }
+        return result;
+    } else {
+        std::string result{"0"};
+        int scale = 0;
+        for (auto it2 = s2.end()-1; it2 != s2.begin() - 1; it2--) {
+            std::string res = multiply_strings(s1, std::to_string(*it2 - '0'));
+
+            result = add_strings(res.append(scale, '0'), result);
+
+            scale++;
+        }
+        return result;
     }
-    return result;
 }
