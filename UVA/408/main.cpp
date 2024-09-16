@@ -22,9 +22,9 @@ int main (int argc, char *argv[]) {
         std::cout << std::setw(10) << step;
         std::cout << std::setw(10) << mod << "    ";
         if (no_common_divisor(mod, step))
-            std::cout << std::left << "Good Choice\n\n";
+            std::cout << "Good Choice\n\n";
         else
-            std::cout << std::left << "Bad Choice\n\n";
+            std::cout << "Bad Choice\n\n";
     }
 
     return 0;
