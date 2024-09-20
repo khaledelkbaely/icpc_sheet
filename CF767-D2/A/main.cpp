@@ -23,7 +23,7 @@ int main (int argc, char *argv[]) {
                     max--;
                 }
             }
-            std::cout << "\b\n";
+            std::cout << "\n";
         } else {
             skipped[curr-1] = curr;
             std::cout << '\n';
