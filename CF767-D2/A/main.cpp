@@ -14,14 +14,12 @@ int main (int argc, char *argv[]) {
 
         seq[curr-1] = true;
 
-        while (seq[idx]) {
+        while (idx > 0 && seq[idx]) {
             std::cout << idx+1 << ' ';
             idx--;
         }
         std::cout << '\n';
 
     }
-
-
     return 0;
 }
