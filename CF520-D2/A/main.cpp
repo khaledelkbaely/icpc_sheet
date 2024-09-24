@@ -1,16 +1,18 @@
 #include <array>
 #include <cctype>
 #include <iostream>
+#include <string>
 
 int main (int argc, char *argv[]) {
 
     int n;
     std::cin >> n;
 
-    char c;
+    std::string s;
+    std::cin >> s;
+
     std::array<bool, 26> alphas{false};
-    for (; n > 0; --n) {
-        std::cin >> c;
+    for (char c : s) {
         c = std::tolower(c);
         alphas[c-'a'] = true;
     }
